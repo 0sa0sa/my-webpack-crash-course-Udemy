@@ -1,3 +1,4 @@
+// npx webpack-dev-server --open でサーバ立ち上げ
 // webpackについてのサイト参照
 // https://webpack.js.org/configuration/
 
@@ -19,5 +20,10 @@ module.exports = {
   output: {
     filename: "main.js",
     path: outputPath,
+  },
+
+  // devServer: npx webpack-dev-server --openで立ち上げるpathをabsolute pathで設定
+  devServer: {
+    contentBase: outputPath,
   },
 };
