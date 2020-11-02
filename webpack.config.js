@@ -22,6 +22,16 @@ module.exports = {
     path: outputPath,
   },
 
+  // css-;loaderを使う！
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
+
   // devServer: npx webpack-dev-server --openで立ち上げるpathをabsolute pathで設定
   devServer: {
     contentBase: outputPath,

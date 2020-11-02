@@ -12,6 +12,9 @@ import { NAME as NAME_OF_Osa } from "./utilities";
 // import Lion_default from "./utilities";
 // console.log(Lion_default.say());
 
+import style from "./style.css";
+console.log(style.toString());
+
 // console.log(NiJou(4));
 console.log(utilities.NiJou(3));
 
@@ -25,3 +28,4 @@ function component() {
 }
 
 document.body.appendChild(component());
+document.body.classList.add("haikei");
