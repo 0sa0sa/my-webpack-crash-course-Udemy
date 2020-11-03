@@ -15,6 +15,8 @@ import { NAME as NAME_OF_Osa } from "./utilities";
 import style from "./style.css";
 console.log(style.toString());
 
+import logo from "./logo.png";
+
 // console.log(NiJou(4));
 console.log(utilities.NiJou(3));
 
@@ -29,3 +31,7 @@ function component() {
 
 document.body.appendChild(component());
 document.body.classList.add("haikei");
+
+const image = new Image();
+image.src = logo;
+document.body.appendChild(image);
