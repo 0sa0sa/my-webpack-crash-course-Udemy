@@ -16,6 +16,7 @@ import style from "./style.css";
 console.log(style.toString());
 
 import logo from "./logo.png";
+import "./style.scss";
 
 // console.log(NiJou(4));
 console.log(utilities.NiJou(3));
