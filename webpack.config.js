@@ -7,6 +7,7 @@
 //outputのpathはabsolute path
 
 const path = require("path");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 const outputPath = path.resolve(__dirname, "dist");
 console.log({ __dirname });
@@ -41,6 +42,20 @@ module.exports = {
           name: "./images/[name].[ext]",
         },
       },
+      {
+        test: /\.m?jsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+      {
+        test: /\.html$/,
+        loader: "html-loader",
+      },
     ],
   },
 
@@ -48,4 +63,10 @@ module.exports = {
   devServer: {
     contentBase: outputPath,
   },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "./src/index.html",
+      filename: "./index.html",
+    }),
+  ],
 };
